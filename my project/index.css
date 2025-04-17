@@ -1,0 +1,390 @@
+body {
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color:#e6f0fa;
+    color: #333333;
+}
+
+a {
+    text-decoration: none;
+    color: #333333;
+    transition: color 0.3s;
+}
+
+a:hover {
+    color:  #0d6efd; ;
+}
+
+header {
+    background-color: #0d3b66;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    max-height: 50px;
+    margin-right: 10px;
+}
+
+.logo h1 {
+    margin: 0;
+    font-size: 1.5em;
+    font-weight: 700;
+    color: white;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+nav a {
+    color: white;
+    font-weight: 600;
+}
+nav a:hover {
+color: #8ecae6; /* Soft blue hover */
+}
+
+/* Welcome Section */
+.welcome-section {
+    background: linear-gradient(135deg, #0b73b9, #1e90ff);
+    color: #fff;
+    padding: 80px 20px;
+    border-bottom: 4px solid #004080;
+    margin: 40px auto;
+}
+
+.welcome-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 40px;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.welcome-text {
+    max-width: 550px;
+}
+
+.welcome-text h1 {
+    font-size: 2.8em;
+    margin-bottom: 15px;
+}
+
+.welcome-text p {
+    font-size: 1.2em;
+    color: #f1faff;
+}
+
+.welcome-image img {
+    width: 100%;
+    max-width: 600px;
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+    transition: transform 0.3s ease;
+}
+.welcome-image img:hover{
+    transform: translateY(-3px);
+}
+
+/* Discover Section */
+.discover-section {
+    background-color: #e6f3fc;
+    padding: 80px 20px;
+}
+
+.discover-container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.discover-text {
+    flex: 1 1 500px;
+    color: #003366;
+    padding: 20px;
+}
+
+.discover-text h2 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+}
+
+.discover-text p {
+    font-size: 1.1em;
+    margin-bottom: 20px;
+    line-height: 1.6;
+}
+
+.features-list {
+    list-style: none;
+    padding-left: 0;
+    margin-bottom: 20px;
+}
+
+.features-list li {
+    margin-bottom: 10px;
+    font-size: 1.1em;
+}
+
+.btn {
+    display: inline-block;
+    background-color: #0077c0;
+    color: #fff;
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-weight: bold;
+    transition: background 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #005a99;
+}
+
+.discover-image {
+    flex: 1 1 400px;
+    text-align: center;
+    padding: 20px;
+}
+
+.discover-image img {
+    width: 100%;
+    max-width: 500px;
+    border-radius: 16px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+/* Info Section */
+.info-section {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 20px;
+    background: #fff;
+    padding: 40px 20px;
+}
+
+.info-item {
+    max-width: 260px;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.info-item:hover {
+    transform: translateY(-8px);
+}
+
+.info-item img {
+    width: 90px;
+    height: auto;
+    border-radius: 50%;
+    margin-bottom: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+.info-item h3 {
+    color: #0d3b66;
+}
+@keyframes fadeIn{
+    from{opacity: 0;}
+    to{opacity: 1;}
+}
+
+@keyframes rotate{
+    from{transform: rotate(0deg);}
+    to{transform: rotate(360deg);}
+}
+.info-item img{
+    animation: rotate 5s linear infinite;
+}
+
+/* Featured Listings */
+.featured-listings {
+    background-color: #dbeeff;
+    padding: 50px 20px;
+    text-align: center;
+}
+
+.featured-listings h1 {
+    font-size: 2.5em;
+    color: #003566;
+    
+}
+
+.car-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 25px;
+}
+
+.car-item {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    max-width: 300px;
+    transition: transform 0.3s ease;
+}
+
+.car-item:hover {
+    transform: translateY(-5px);
+}
+
+.car-item img {
+    width: 100%;
+    display: block;
+}
+
+.car-item h3 {
+    color: #003566;
+    margin: 10px 0;
+}
+
+.car-item p {
+    padding: 0 10px 15px;
+    color: #444;
+}
+
+/* Footer */
+.site-footer {
+    background-color: #1d3557;
+    color: #ffffff;
+    padding: 30px 15px;
+    text-align: center;
+    font-size: 0.9em;
+    }
+    
+    .footer-content {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 25px;
+    margin-bottom: 20px;
+    }
+    
+    .footer-item {
+    flex: 1 1 200px;
+    border-right: 1px solid #457b9d;
+    padding: 10px;
+    }
+    
+    .footer-item:last-child {
+    border-right: none;
+    }
+    
+    .footer-item h3 {
+    font-size: 1.1em;
+    color: #a8dadc;
+    margin-bottom: 8px;
+    }
+    
+    .footer-item p {
+    color: #e0f7fa;
+    }
+    
+    .footer-item a {
+    color: #d1f1ff;
+    text-decoration: none;
+    }
+    
+    .footer-item a:hover {
+    color: white;
+    text-decoration: underline;
+    }
+    
+    .footer-copyright {
+    margin-top: 20px;
+    font-size: 0.8em;
+    color: #ccc;
+    }
+
+  
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    nav ul {
+        flex-direction: column;
+        gap: 10px;
+        padding: 0;
+    }
+
+    .footer-content {
+        flex-direction: column;
+    }
+
+    .footer-item {
+        flex: 100%;
+        margin-bottom: 1rem;
+    }
+
+
+    .welcome-container,
+    .car-list,
+    .info-section {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .welcome-text,
+    .discover-text {
+        text-align: center;
+    }
+
+    .welcome-image img {
+        width: 100%;
+        max-width: 90%;
+    }
+
+    .info-item {
+        max-width: 100%;
+    }
+
+    .car-item {
+        max-width: 90%;
+    }
+}
+    @media (max-width: 768px) {
+        .discover-container {
+            flex-direction: column;
+            text-align: center;
+        }
+    
+        .discover-text,
+        .discover-image {
+            padding: 10px;
+            max-width: 100%;
+        }
+    
+        .discover-text h2 {
+            font-size: 2em;
+        }
+    
+        .discover-image img {
+            max-width: 90%;
+            margin-top: 20px;
+        }
+    }
+    
+

@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Cars - Used Car Website</title>
+    <link rel="stylesheet"  href="car.css">    
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <a href="index.html"><img src="logo2.jpg" alt="CarMarket Logo"></a>
+            <h1>CarMarket</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="car.html">Cars</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    
+
+    <div class="filters">
+        <select id="price-filter">
+            <option value="">All Prices</option>
+            <option value="0-1000000">₹0 - ₹10,00,000</option>
+            <option value="1000000-2000000">₹10,00,000 - ₹20,00,000</option>
+            <option value="2000000-99999999">₹20,00,000+</option>
+        </select>
+        <select id="mileage-filter">
+            <option value="">All Mileages</option>
+            <option value="0-10000">0 - 10,000</option>
+            <option value="10000-20000">10,000 - 20,000</option>
+            <option value="20000-30000">20,000 - 30,000</option>
+            <option value="30000-999999">30,000+</option>
+        </select>
+        <select id="year-filter">
+            <option value="">All Years</option>
+            <option value="2000-2010">2000 - 2010</option>
+            <option value="2010-2020">2010 - 2020</option>
+            <option value="2020-2025">2020 - 2025</option>
+        </select>
+    </div>
+    
+        <div class="car-list" id="car-list">
+            
+        </div>
+    </div>
+
+
+
+
+
+    <!-- Booking Modal -->
+<div id="booking-modal" style="display:none;">
+    <div class="modal-content">
+        <span class="close-btn" onclick="document.getElementById('booking-modal').style.display='none'">&times;</span>
+        <h2>Book This Car</h2>
+        <form id="booking-form">
+            <input type="text" id="car-name" name="car" readonly />
+            <input type="text" placeholder="Your Name" required />
+            <input type="email" placeholder="Your Email" required />
+            <input type="tel" placeholder="Phone Number" required />
+            <textarea placeholder="Message (optional)"></textarea>
+            <button type="submit">Submit Booking</button>
+        </form>
+    </div>
+</div>
+
+    <footer class="site-footer">
+        <div class="footer-content">
+            <div class="footer-item">
+                <a href="about.html"><h3>About Us</h3></a>
+                <p>We are a team of car enthusiasts dedicated to providing the best used cars in the market.</p>
+            </div>
+            <div class="footer-item">
+                <a href="contact.html"><h3>Contact Us</h3></a>
+                <p>Email: info@carmarket.com<br>Phone: +1 (123) 456-7890</p>
+            </div>
+            <div class="footer-item">
+                <h3>Follow Us</h3>
+                <p>Facebook | Twitter | Instagram | LinkedIn</p>
+            </div>
+            <div class="footer-item">
+                <h3>Customer Support</h3>
+                <p>24/7 Support: support@carmarket.com</p>
+            </div>
+        </div>
+        <div class="footer-copyright">
+            <p>&copy; 2024 CarMarket. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Sample car data
+        const cars = [
+           { id: 1, name: 'Mercedes-Benz SLC', price: 999600, mileage: 5000, year: 2018, image: 'car-1.png' },
+            { id: 2, name: 'MG Hector', price: 1249500, mileage: 8000, year: 2015, image: 'car-2.png' },
+            { id: 3, name: 'Nissan Leaf', price: 2082500, mileage: 12000, year: 2020, image: 'car-3.png' },
+            { id: 4, name: 'Audi Q5', price: 900000, mileage: 15000, year: 2012, image: 'car-4.png' },
+            { id: 5, name: 'Kia Sportage', price: 600000, mileage: 20000, year: 2010, image: 'car-5.png' },
+            { id: 6, name: 'Honda Civic', price: 900000, mileage: 4000, year: 2018, image: 'car-6.png' },
+            { id: 7, name: 'Kia Seltos', price: 800000, mileage: 8000, year: 2015, image: 'car-7.png' },
+            { id: 8, name: 'Chevrolet Equinox', price: 250000, mileage: 12000, year: 2020, image: 'car-8.png' },
+            { id: 9, name: 'Porsche 911 Cabriolet', price: 3000000, mileage: 17000, year: 2012, image: 'vehicle-1.png' },
+            { id: 10, name: 'Porsche Panamera', price: 800000, mileage: 60000, year: 2010, image: 'vehicle-2.png' },
+            { id: 11, name: 'Porsche 911 Carrera', price: 1200000, mileage: 3000, year: 2018, image: 'vehicle-3.png' },
+            { id: 12, name: 'Porsche Cayman', price: 1100000, mileage: 8000, year: 2015, image: 'vehicle-4.png' },
+            { id: 13, name: 'Porsche 718 Boxster', price: 800000, mileage: 12000, year: 2020, image: 'vehicle-5.png' },
+            { id: 14, name: 'Porsche Cayenne', price: 300000, mileage: 15000, year: 2012, image: 'vehicle-6.png' },
+            { id: 15, name: 'Audi A4', price: 800000, mileage: 90000, year: 2010, image: 'car13.jpg' },
+            { id: 16, name: 'BMW X5', price: 1200000, mileage: 5000, year: 2018, image: 'car9.jpg' },
+            { id: 17, name: 'Mercedes-Benz EQE', price: 1500000, mileage: 10000, year: 2015, image: 'car1.jpg' },
+            { id: 18, name: 'Ferrari 458 italia', price: 2500000, mileage: 12000, year: 2020, image: 'car18.jpg' },
+            { id: 19, name: 'BMW X4', price: 300000, mileage: 15000, year: 2012, image: 'car4.jpg' },
+            { id: 20, name: 'Honda Accord 2020', price: 800000, mileage: 5000, year: 2010, image: 'car5.jpg' },
+            // Add more cars as needed
+        ];
+
+        const carList = document.getElementById('car-list');
+        const priceFilter = document.getElementById('price-filter');
+        const mileageFilter = document.getElementById('mileage-filter');
+        const yearFilter = document.getElementById('year-filter');
+
+        function displayCars(cars) {
+    carList.innerHTML = '';
+    cars.forEach(car => {
+        const carCard = document.createElement('div');
+        carCard.className = 'car-card';
+        carCard.innerHTML = `
+            <img src="${car.image}" alt="${car.name}">
+            <h3>${car.name}</h3>
+            <p>Price: ₹${car.price.toLocaleString('en-IN')}</p>
+            <p>Mileage: ${car.mileage.toLocaleString()} km</p>
+            <p>Year: ${car.year}</p>
+            <button class="book-btn" data-car="${car.name}">Book Now</button>
+        `;
+        carList.appendChild(carCard);
+    });
+
+    // Add event listeners to new buttons
+    document.querySelectorAll('.book-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+            const carName = btn.getAttribute('data-car');
+            document.getElementById('car-name').value = carName;
+            document.getElementById('booking-modal').style.display = 'flex';
+
+        });
+    });
+}
+
+
+        function filterCars() {
+            let filteredCars = cars;
+
+            if (priceFilter.value) {
+                const [minPrice, maxPrice] = priceFilter.value.split('-').map(Number);
+                filteredCars = filteredCars.filter(car => car.price >= minPrice && car.price <= maxPrice);
+            }
+
+            if (mileageFilter.value) {
+                const [minMileage, maxMileage] = mileageFilter.value.split('-').map(Number);
+                filteredCars = filteredCars.filter(car => car.mileage >= minMileage && car.mileage <= maxMileage);
+            }
+
+            if (yearFilter.value) {
+                const [minYear, maxYear] = yearFilter.value.split('-').map(Number);
+                filteredCars = filteredCars.filter(car => car.year >= minYear && car.year <= maxYear);
+            }
+
+            displayCars(filteredCars);
+        }
+
+        priceFilter.addEventListener('change', filterCars);
+        mileageFilter.addEventListener('change', filterCars);
+        yearFilter.addEventListener('change', filterCars);
+
+        
+
+        // Display all cars initially
+        displayCars(cars);
+    </script>
+</body>
+</html>
